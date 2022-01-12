@@ -9,14 +9,3 @@ export default function About() {
     </>
   );
 }
-
-export const getStaticProps = wrapper.getStaticProps(
-  (store) =>
-    ({ preview }) => {
-      store.dispatch(getPageData('home'));
-      store.dispatch(getNavItems());
-      return {
-        revalidate: 10
-      };
-    }
-);

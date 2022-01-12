@@ -1,28 +1,32 @@
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk';
-import { createWrapper } from 'next-redux-wrapper';
-import reducer from './reducers/pages';
+import { HYDRATE, createWrapper } from 'next-redux-wrapper';
+import rootReducer from './reducers';
 
-const middleware = [thunkMiddleware];
-
-const initialState = {
-  pages: {},
-  navItems: {},
-  services: {}
+const bindMiddleware = (middleware) => {
+  if (process.env.NODE_ENV !== 'production') {
+    return composeWithDevTools(applyMiddleware(...middleware));
+  }
+  return applyMiddleware(...middleware);
 };
 
-const store = createStore(
-  rootReducer,
-  initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
-);
+const reducer = (state, action) => {
+  if (action.type === HYDRATE) {
+    const nextState = {
+      ...state,
+      ...action.payload
+    };
+    return nextState;
+  } else {
+    return rootReducer(state, action);
+  }
+};
+
+const store = createStore(reducer, {}, bindMiddleware([thunkMiddleware]));
 
 const initStore = () => {
   return store;
 };
 
-const wrapper = createWrapper(initStore, { debug: true });
-
-export default wrapper;
+export const wrapper = createWrapper(initStore);

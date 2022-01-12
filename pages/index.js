@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Image from '../components/Image';
-import wrapper from '../redux';
+import { wrapper } from '../redux';
 import Content from '../components/Content';
 import ServicesCards from '../components/ServicesCards';
 import { getPageData } from '../redux/actions/pages';
@@ -9,8 +9,9 @@ import { getServiceData } from '../redux/actions/services';
 import { useSelector } from 'react-redux';
 
 export default function Home({ data }) {
-  const pages = useSelector((state) => state.pages);
+  const services = useSelector((state) => state.services);
 
+  console.log(services);
   return (
     <>
       <h1>Home</h1>
@@ -21,13 +22,8 @@ export default function Home({ data }) {
 }
 
 export const getStaticProps = wrapper.getStaticProps(
-  (store) =>
-    ({ preview }) => {
-      store.dispatch(getPageData('home'));
-      store.dispatch(getNavItems());
-      store.dispatch(getServiceData());
-      return {
-        revalidate: 60
-      };
-    }
+  (store) => async (context) => {
+    await store.dispatch(getServiceData());
+    await store.dispatch(getNavItems());
+  }
 );

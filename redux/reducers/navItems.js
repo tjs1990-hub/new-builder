@@ -7,11 +7,11 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case HYDRATE:
-      return {
-        ...state.navItems,
-        ...action.payload
-      };
+    // case HYDRATE:
+    //   return {
+    //     ...state.navItems,
+    //     ...action.payload
+    //   };
     case actionTypes.GET_NAV_ITEMS:
       return {
         ...state.navItems,

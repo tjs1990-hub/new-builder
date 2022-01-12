@@ -10,13 +10,13 @@ export default function Services() {
   );
 }
 
-export const getStaticProps = wrapper.getStaticProps(
-  (store) =>
-    ({ preview }) => {
-      store.dispatch(getPageData('home'));
-      store.dispatch(getNavItems());
-      return {
-        revalidate: 10
-      };
-    }
-);
+// export const getStaticProps = wrapper.getStaticProps(
+//   (store) =>
+//     ({ preview }) => {
+//       store.dispatch(getPageData('home'));
+//       store.dispatch(getNavItems());
+//       return {
+//         revalidate: 10
+//       };
+//     }
+// );

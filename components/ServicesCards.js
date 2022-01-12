@@ -4,7 +4,7 @@ import Image from '../components/Image';
 import Link from 'next/link';
 
 const ServicesCards = () => {
-  const services = useSelector((state) => state.services.services);
+  const services = useSelector((state) => state.services);
 
   return (
     <>
@@ -35,7 +35,10 @@ const ServicesCards = () => {
                       <>
                         <Link href={`/${t.slug.current}`} key={t._id}>
                           <a>
-                            <span className="inline-block bg-gray-dark rounded-full px-3 py-1 text-sm font-semibold text-gray-light mr-2 mb-2 hover:text-white ">
+                            <span
+                              className="inline-block bg-gray-dark rounded-full px-3 py-1 text-sm font-semibold text-gray-light mr-2 mb-2 hover:text-white "
+                              key={t.slug.current}
+                            >
                               #{t.slug.current}
                             </span>
                           </a>
