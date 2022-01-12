@@ -29,4 +29,4 @@ const initStore = () => {
   return store;
 };
 
-export const wrapper = createWrapper(initStore);
+export const wrapper = createWrapper(initStore, { debug: true });

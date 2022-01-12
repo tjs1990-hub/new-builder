@@ -17,9 +17,11 @@ module.exports = {
       'h-90': '90px',
       'h-200': '200px',
       'h-50': '50vh',
+      'h-50p': '50%',
       'h-100': '100vh',
       'h-full': '100%',
-      'h-auto': 'auto'
+      'h-auto': 'auto',
+      'max-h-c': 'max-height: 26rem'
     },
     width: {
       'w-25': '25%',

@@ -9,6 +9,7 @@ export const getServiceData = (slug) => async (dispatch) => {
       title,
       slug,
       body,
+      excerpt,
       mainImage,
       locations[]->,
    
