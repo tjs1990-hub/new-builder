@@ -10,7 +10,7 @@ export default function About() {
   );
 }
 
-export const getStaticProps = wrapper.getStaticProps(
+export const getServerSideProps = wrapper.getServerSideProps(
   (store) =>
     ({ preview }) => {
       store.dispatch(getPageData('home'));

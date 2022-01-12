@@ -5,12 +5,12 @@ import { getNavItems } from '../redux/actions/navItems';
 export default function Contact() {
   return (
     <>
-      <h1>Home</h1>
+      <h1>Contact</h1>
     </>
   );
 }
 
-export const getStaticProps = wrapper.getStaticProps(
+export const getServerSideProps = wrapper.getServerSideProps(
   (store) =>
     ({ preview }) => {
       store.dispatch(getPageData('home'));

@@ -6,13 +6,11 @@ export default function Services() {
   return (
     <>
       <h1>Services</h1>
-
-
     </>
   );
 }
 
-export const getStaticProps = wrapper.getStaticProps(
+export const getServerSideProps = wrapper.getServerSideProps(
   (store) =>
     ({ preview }) => {
       store.dispatch(getPageData('home'));
