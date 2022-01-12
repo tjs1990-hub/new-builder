@@ -7,15 +7,30 @@ import Layout from '../components/Layout';
 import '../styles/globals.css';
 import { useRouter } from 'next/router';
 
-const MyApp = ({ Component, pageProps }) => {
-  return (
-    <>
-      <Layout>
-        <DefaultSeo {...SEO} />
-        <Component {...pageProps} />
-      </Layout>
-    </>
+class MyApp extends App {
+  static getInitialProps = wrapper.getInitialAppProps(
+    (store) => async (context) => {
+      return {
+        pageProps: {
+          // https://nextjs.org/docs/advanced-features/custom-app#caveats
+          ...(await App.getInitialProps(context)).pageProps
+        }
+      };
+    }
   );
-};
+
+  render() {
+    const { Component, pageProps } = this.props;
+
+    return (
+      <>
+        <Layout>
+          <DefaultSeo {...SEO} />
+          <Component {...pageProps} />
+        </Layout>
+      </>
+    );
+  }
+}
 
 export default wrapper.withRedux(MyApp);
