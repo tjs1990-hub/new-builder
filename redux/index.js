@@ -23,6 +23,6 @@ const initStore = () => {
   return store;
 };
 
-const wrapper = createWrapper(initStore, { debug: false });
+const wrapper = createWrapper(initStore, { debug: true });
 
 export default wrapper;
