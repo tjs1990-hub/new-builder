@@ -1,3 +1,5 @@
-export default function Location() {
-  return <h1>Hey now</h1>;
-}
+const Locations = () => {
+  return <h1>Hi</h1>;
+};
+
+export default Locations;

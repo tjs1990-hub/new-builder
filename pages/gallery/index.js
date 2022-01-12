@@ -1,3 +1,5 @@
-export default function Gallery() {
-  return <h1>Hey now</h1>;
-}
+const Gallery = () => {
+  return <h1>Hi</h1>;
+};
+
+export default Gallery;
