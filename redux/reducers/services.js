@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 import { HYDRATE } from 'next-redux-wrapper';
 
 const initialState = {
-  services: []
+  services: {}
 };
 
 const reducer = (state = initialState, action) => {

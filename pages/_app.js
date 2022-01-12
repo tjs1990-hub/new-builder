@@ -5,7 +5,6 @@ import SEO from '../next-seo.config';
 import { DefaultSeo } from 'next-seo';
 import Layout from '../components/Layout';
 import '../styles/globals.css';
-import { useRouter } from 'next/router';
 
 class MyApp extends App {
   static getInitialProps = wrapper.getInitialAppProps(

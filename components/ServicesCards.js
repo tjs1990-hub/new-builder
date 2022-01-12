@@ -30,17 +30,18 @@ const ServicesCards = () => {
                   Popular areas
                 </p>
                 <div className="px-6 pt-4 pb-2 grid grid-cols-3">
-                  {item.locations.map((t) => (
-                    <>
-                      <Link href={`/locations/${t.slug.current}`} key={t._id}>
-                        <a>
-                          <span className="inline-block bg-gray-dark rounded-full px-3 py-1 text-sm font-semibold text-gray-light mr-2 mb-2 hover:text-white ">
-                            #{t.slug.current}
-                          </span>
-                        </a>
-                      </Link>
-                    </>
-                  ))}
+                  {item &&
+                    item.locations.map((t) => (
+                      <>
+                        <Link href={`/${t.slug.current}`} key={t._id}>
+                          <a>
+                            <span className="inline-block bg-gray-dark rounded-full px-3 py-1 text-sm font-semibold text-gray-light mr-2 mb-2 hover:text-white ">
+                              #{t.slug.current}
+                            </span>
+                          </a>
+                        </Link>
+                      </>
+                    ))}
                 </div>
               </div>
             </span>
