@@ -9,16 +9,12 @@ import { getServiceData } from '../redux/actions/services';
 import { useSelector } from 'react-redux';
 
 export default function Home({ data }) {
-  const pages = useSelector((state) => state.pages.pages);
-
-
-
+  const pages = useSelector((state) => state.pages);
 
   return (
     <>
       <h1>Home</h1>
-      
-   
+
       <ServicesCards />
     </>
   );
