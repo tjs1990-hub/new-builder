@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Image from '../components/Image';
 import Link from 'next/link';
 import Content from '../components/Content';
+import toPlainText from '../components/PlainText';
 
 const ServicesCards = () => {
   const services = useSelector((state) => state.services);
 
   return (
     <>
-      <div className="grid rid grid-cols-2 gap-4 md:grid-cols-3 md:gap-2 p-10 justify-items-center items-center">
+      <div className="grid rid grid-cols-1 h-max-h-c gap-4 md:grid-cols-3 md:gap-2 p-14 justify-items-center items-center transition-all ease-in-out  ">
         {Object.keys(services).map((key) => {
           const item = services[key];
 
           return (
             <span key={item._id}>
-              <div className="max-w-sm rounded overflow-hidden shadow-lg mb-10 flex flex-col max-h-c">
+              <div className=" max-w-xs rounded overflow-hidden shadow-lg hover:shadow-2xl mb-10 flex flex-col max-h-c">
                 <div className="w-w-full transition-all hover:scale-110">
                   <Image image={item.mainImage.asset._ref} />
                 </div>
@@ -24,10 +25,10 @@ const ServicesCards = () => {
                     {item.title}
                   </div>
                   <span className="text-gray-light text-base  hover:text-gray-dark ">
-                    <Content content={item.excerpt} />
+                    {toPlainText(item.excerpt)}...
                   </span>
-                  <button className=" font-xs bg-green hover:bg-gray-light hover:text-green text-white  font-bold py-1 px-4 rounded mr-4 ml-4 mt-4">
-                    Read More
+                  <button className=" duration-200 font-xs bg-green hover:bg-blue-dark hover:text-green text-white  font-bold py-1 px-4 rounded mr-4 ml-4 mt-4">
+                    Learn More
                   </button>
                 </div>
                 <p className="font-xs text-gray-light text-center">
@@ -36,18 +37,16 @@ const ServicesCards = () => {
                 <div className="px-6 pt-4 pb-2 grid grid-cols-3">
                   {item &&
                     item.locations.map((t) => (
-                      <>
-                        <Link href={`/${t.slug.current}`} key={t._id}>
-                          <a>
-                            <span
-                              className=" bg-gray-dark rounded-full px-3 py-1 text-sm font-semibold text-gray-light mr-2 mb-2  hover:text-white flex justify-evenly"
-                              key={t.slug.current}
-                            >
-                              #{t.slug.current}
-                            </span>
-                          </a>
-                        </Link>
-                      </>
+                      <Link href={`/${t.slug.current}`} key={t._id}>
+                        <a>
+                          <span
+                            className=" bg-blue-dark rounded-full px-3 py-1 text-sm font-semibold text-gray-light mr-2 mb-2  hover:text-white flex justify-evenly"
+                            key={t.slug.current}
+                          >
+                            #{t.slug.current}
+                          </span>
+                        </a>
+                      </Link>
                     ))}
                 </div>
               </div>

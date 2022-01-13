@@ -9,13 +9,14 @@ import { getNavItems } from '../redux/actions/navItems';
 import { getServiceData } from '../redux/actions/services';
 import { getHomePage } from '../redux/actions/homePage';
 import { useSelector } from 'react-redux';
+import GetQuote from '../components/widgets/getQuote';
 
 export default function Home({ data }) {
   const homePage = useSelector((state) => state.homePage.frontpage);
 
   return (
     <>
-      <div className="w-w-full relative h-h-50p z-20">
+      <div className="w-w-full relative h-h-50p z-20 mb-5">
         <Image
           image={homePage.mainImage.asset._ref}
           className="relative z-30 h-h-50p"
@@ -23,6 +24,8 @@ export default function Home({ data }) {
 
         <div className="w-w-full h-h-full absolute top-0 right-0 bg-gray-dark opacity-60"></div>
       </div>
+
+      <GetQuote />
 
       <ServicesCards />
     </>

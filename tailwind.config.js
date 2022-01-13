@@ -7,12 +7,13 @@ module.exports = {
     extend: {},
     colors: {
       'blue-dark': '#262737',
-      white: '#ffffff',
-      green: '#00DFB6',
+      'white': '#ffffff',
+      'green': '#00DFB6',
       'gray-dark': '#4E4D56',
       'gray-light': '#C4C4C4'
     },
     height: {
+      'h-5': '5rem',
       'h-40': '40px',
       'h-90': '90px',
       'h-200': '200px',
