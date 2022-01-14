@@ -16,22 +16,22 @@ const ServicesCards = () => {
 
           return (
             <span key={item._id}>
-              <div className=" max-w-xs rounded overflow-hidden shadow-lg hover:shadow-2xl mb-10 flex flex-col max-h-c">
+              <div className=" max-w-xs rounded overflow-hidden shadow-lg hover:shadow-2xl mb-5 flex flex-col max-h-c">
                 <div className="w-w-full transition-all hover:scale-110">
                   <Image image={item.mainImage.asset._ref} />
                 </div>
                 <div className="px-6 py-4 flex flex-col">
-                  <div className="font-bold text-xl mb-2 text-green hover:underline hover:scale-110 hover:text-gray-dark transition-all ease-in-out">
+                  <div className="font-bold text-xl mb-2 text-blue-dark hover:underline hover:scale-110 hover:text-gray-dark transition-all ease-in-out">
                     {item.title}
                   </div>
-                  <span className="text-gray-light text-base  hover:text-gray-dark ">
+                  <span className="text-gray-dark text-base  ">
                     {toPlainText(item.excerpt)}...
                   </span>
-                  <button className=" duration-200 font-xs bg-green hover:bg-blue-dark hover:text-green text-white  font-bold py-1 px-4 rounded mr-4 ml-4 mt-4">
+                  <button className=" duration-200 font-xs bg-green hover:bg-blue-dark hover:text-white text-blue-dark  font-bold py-1 px-4 rounded mr-4 ml-4 mt-4">
                     Learn More
                   </button>
                 </div>
-                <p className="font-xs text-gray-light text-center">
+                <p className="font-xs text-dark-blue text-center">
                   Popular areas
                 </p>
                 <div className="px-6 pt-4 pb-2 grid grid-cols-3">

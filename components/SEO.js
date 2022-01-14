@@ -1,43 +1,41 @@
 import Head from "next/head"
 import {useRouter} from 'next/router'
+import {NextSeo} from 'next-seo'
 
-const SEO = ({title, description, image, url}) => {
+
+const SEO = (props) => {
+    const site = 'https://landscapegardenerswestyorkshire.com';
 
 
 
 
  const router = useRouter()
 
-
+ const path = router.pathname;
 
 
 
 
     return(
         <>
-        <Head>
-            <title>{title}</title>
-        <meta name="description" content={description}/>
-        <meta name="subject" content="your website's subject"/>
-        <meta name="copyright"content="TJM Landscapes"/>
-        <meta name="language" content="en_gb"/>
-        <meta name="robots" content="index,follow" />
-        <meta name="Classification" content="Business"/>
-        <meta name="url" content={url}/>
-
-        <meta name="og:title" content={title}/>
-<meta name="og:url" content={url}/>
-<meta name="og:image" content={image}/>
-<meta name="og:site_name" content="TJM Landscapes"/>
-<meta name="og:description" content={description}/>
-
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta content="yes" name="apple-touch-fullscreen" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-<meta name="format-detection" content="telephone=no"/>
-<meta name="viewport" content="width = 320, initial-scale = 2.3, user-scalable = no"/>
-
-        </Head>
+        <NextSeo
+        title={props.title}
+        noindex={false}
+        description={props.description}
+        canonical={`${site}${path}`}
+        openGraph={{
+          url: `${site}${path}`,
+          title: `${props.title || null}`,
+          images: [
+            {
+              url: `${props.imageURL || null}`,
+              alt: `${props.imageALT || null}`,
+              type: 'image/web3'
+            }
+          ],
+          site_name: 'TJM Landscapes'
+        }}
+      />
         </>
     )
 

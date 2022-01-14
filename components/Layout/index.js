@@ -19,23 +19,7 @@ const Layout = (props) => {
 
   return (
     <>
-      <NextSeo
-        title={props.title}
-        description={props.description}
-        canonical={`${site}${path}`}
-        openGraph={{
-          url: `${site}${path}`,
-          title: `${props.title || null}`,
-          images: [
-            {
-              url: `${props.imageURL || null}`,
-              alt: `${props.imageALT || null}`,
-              type: 'image/web3'
-            }
-          ],
-          site_name: 'TJM Landscapes'
-        }}
-      />
+      
 
       {path === '/' && (
         <LocalBusinessJsonLd

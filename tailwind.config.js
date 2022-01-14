@@ -10,7 +10,12 @@ module.exports = {
       'white': '#ffffff',
       'green': '#00DFB6',
       'gray-dark': '#4E4D56',
-      'gray-light': '#C4C4C4'
+      'gray-light': '#C4C4C4',
+      'black': '#000000',
+      'g-green': '#3cba54',
+      'g-yellow': '#f4c20d',
+      'g-red': '#db3236',
+      'g-blue': '#4885ed'
     },
     height: {
       'h-5': '5rem',
@@ -22,16 +27,19 @@ module.exports = {
       'h-100': '100vh',
       'h-full': '100%',
       'h-auto': 'auto',
-      'max-h-c': 'max-height: 26rem'
+      'max-h-c': 'max-height: 26rem',
+      'h-64': '16rem',
     },
     width: {
       'w-25': '25%',
       'w-50': '50vw',
+      'w-100p': '100px',
       'w-50p': '50%',
       'w-33': '33%',
       'w-100': '100vw',
       'w-full': '100%',
-      'w-auto': 'auto'
+      'w-auto': 'auto',
+      'w-64': '16rem'
     }
   },
   plugins: []
