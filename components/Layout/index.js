@@ -5,6 +5,7 @@ import {
   SocialProfileJsonLd
 } from 'next-seo';
 import { useRouter } from 'next/router';
+import Footer from './Footer';
 import Header from './Header';
 
 const Layout = (props) => {
@@ -130,6 +131,7 @@ const Layout = (props) => {
       <main>
         <Header />
         {props.children}
+        <Footer />
       </main>
     </>
   );

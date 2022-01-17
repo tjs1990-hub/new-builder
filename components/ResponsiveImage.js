@@ -10,14 +10,14 @@ const configuredSanityClient = sanityClient({
   apiVersion: '2021-12-17'
 });
 
-const Image = (props) => {
+const ResponsiveImage = (props) => {
   const imageProps = useNextSanityImage(configuredSanityClient, props.image);
 
   return (
     <>
-      <Img {...imageProps} layout='responsive' placeholder="blur" />
+      <Img {...imageProps} layout='intrinsic' placeholder="blur" />
     </>
   );
 };
 
-export default Image;
+export default ResponsiveImage;

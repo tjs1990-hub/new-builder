@@ -8,14 +8,14 @@ const MainNav = () => {
     <div className="w-full h-h-40 bg-green">
       <ul className="flex w-full h-h-full justify-evenly items-center">
         <Link href="/">
-          <li className="text-blue-dark uppercase  text-sm font-semibold hover:text-white hover:underline">
+          <li className="text-blue-dark text-sm font-semibold hover:text-white hover:underline">
             Home
           </li>
         </Link>
         {items &&
           items.items.map((i) => (
             <Link href={i.text.toLowerCase()} key={i._key}>
-              <li className=" text-blue-dark uppercase  text-sm font-semibold hover:text-white hover:underline">
+              <li className=" text-blue-dark   text-sm font-semibold hover:text-white hover:underline">
                 {i.text}
               </li>
             </Link>

@@ -30,15 +30,15 @@ export default function Home({ data }) {
 
       <GetQuote />
 
-     <div className='p-10 md:p-40 w-w-full flex justify-items-center'>      <Content content={homePage.bodytop}/></div>
+     <div className='p-10 md:p-20  lg:p-40  inline-block'>      <Content content={homePage.bodytop}/></div>
 
       <ServicesCards />
 
-      <div className='p-10 md:p-40  w-w-full flex justify-items-center '>   
-         <Content content={homePage.bodytop}/>
+      <div className='pr-10 pl-10 md:p-20  lg:p-40  w-w-full inline-block'>   
+         <Content content={homePage.body}/>
       </div>
 
-      <HorizontalCards />
+      <HorizontalCards/>
     </>
   );
 }

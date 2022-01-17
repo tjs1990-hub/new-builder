@@ -1,5 +1,4 @@
 import {useState} from 'react'
-import Image from '../Image'
 import { useSelector } from 'react-redux'
 import Ratings from 'react-ratings-declarative'
 import toPlainText from '../PlainText'
@@ -12,7 +11,7 @@ const HorizontalCards = (props) => {
 
     const services = useSelector((state) => state.services);
 
-    const [rating, setRating] = useState(3.5)
+    const [rating, setRating] = useState(4)
 
     
 
@@ -24,7 +23,7 @@ const data = Object.keys(services).map(s => services[s])
 
 
     return(
-        <div className="flex flex-col  bg-white m-auto p-auto h-h-auto w-full">
+        <div className="flex flex-col bg-white m-auto p-auto h-h-auto w-full">
 <span
         className="py-5  text-center lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold  "
       >
@@ -51,7 +50,7 @@ const data = Object.keys(services).map(s => services[s])
 
 
             {data.map(d => (
-                      <div className="inline-block px-3" key={d._id}>
+                      <div className="inline-block px-3" key={d.title}>
                       <div
                         className="w-w-64 h-h-64 text-center flex flex-col  justify-items-center overflow-hidden rounded-lg shadow-md bg-white  hover:shadow-xl transition-shadow duration-300 ease-in-out"
                       >
@@ -70,17 +69,13 @@ const data = Object.keys(services).map(s => services[s])
                    <Ratings
             rating={rating}
             widgetRatedColors="#00DFB6"
-            size='10px'
-         
-            
-        
-          >
+            size='10px'>
           
-            <Ratings.Widget      widgetDimension="20px"     />
-            <Ratings.Widget    widgetDimension="20px"     />
-            <Ratings.Widget    widgetDimension="20px"     />
-            <Ratings.Widget     widgetDimension="20px"     />
-            <Ratings.Widget      widgetDimension="20px"     />
+            <Ratings.Widget        widgetDimension="30px"   />
+            <Ratings.Widget    widgetDimension="30px"     />
+            <Ratings.Widget    widgetDimension="30px"     />
+            <Ratings.Widget     widgetDimension="30px"     />
+            <Ratings.Widget      widgetDimension="30px"     />
         
           </Ratings>
                    </span>
@@ -98,37 +93,6 @@ const data = Object.keys(services).map(s => services[s])
        
 
 
-{/* 
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div> */}
 
 
 

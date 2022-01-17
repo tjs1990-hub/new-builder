@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import Image from '../components/Image';
+import ResponsiveImage from './ResponsiveImage';
 import Link from 'next/link';
 import Content from '../components/Content';
 import toPlainText from '../components/PlainText';
@@ -10,15 +10,19 @@ const ServicesCards = () => {
 
   return (
     <>
+
+
+
+  
       <div className="grid rid grid-cols-1 h-max-h-c gap-4 md:grid-cols-3 md:gap-2 p-14 justify-items-center items-center transition-all ease-in-out  ">
         {Object.keys(services).map((key) => {
           const item = services[key];
 
           return (
             <span key={item._id}>
-              <div className=" max-w-xs rounded overflow-hidden shadow-lg hover:shadow-2xl mb-5 flex flex-col max-h-c">
+              <div className=" max-w-xs  rounded overflow-hidden shadow-lg hover:shadow-2xl mb-5 flex flex-col max-h-c">
                 <div className="w-w-full transition-all hover:scale-110">
-                  <Image image={item.mainImage.asset._ref} />
+                  <ResponsiveImage image={item.mainImage.asset._ref} />
                 </div>
                 <div className="px-6 py-4 flex flex-col">
                   <div className="font-bold text-xl mb-2 text-blue-dark hover:underline hover:scale-110 hover:text-gray-dark transition-all ease-in-out">
@@ -58,3 +62,6 @@ const ServicesCards = () => {
   );
 };
 export default ServicesCards;
+
+
+
