@@ -42,7 +42,7 @@ const MobileNav = (props) => {
               <Menu.Item>
           {({ active }) => (
             <a
-              className={`${active && 'bg-green text-white'}`}
+              className={`${active && 'bg-blue-dark text-white'}`}
               href="/account-settings"
             >
               Account settings

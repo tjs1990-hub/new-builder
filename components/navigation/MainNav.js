@@ -5,7 +5,7 @@ const MainNav = () => {
   const items = useSelector((state) => state.navItems[0]);
 
   return (
-    <div className="w-full h-h-40 bg-green">
+    <div className="w-full h-h-40 bg-green   ">
       <ul className="flex w-full h-h-full justify-evenly items-center">
         <Link href="/">
           <li className="text-blue-dark text-sm font-semibold hover:text-white hover:underline">
