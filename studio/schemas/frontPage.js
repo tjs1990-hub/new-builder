@@ -9,6 +9,16 @@ export default {
       type: 'string'
     },
     {
+      name: 'seotitle',
+      title: 'SEO Title',
+      type: 'string'
+    },
+    {
+      name: 'seodesc',
+      title: 'SEO Description',
+      type: 'string'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -37,9 +47,9 @@ export default {
       type: 'string'
     },
     {
-      name: 'bodyTop',
-      title: 'Body Top',
-      type: 'blockContent'
+      name: 'bodytop',
+      title: 'Body top',
+      type: 'blockContent',
     },
     {
       name: 'categories',
@@ -78,9 +88,9 @@ export default {
     },
     {
       name: 'body',
-      title: 'Body',
+      title: 'Body Bottom',
       type: 'blockContent'
-    }
+    },
   ],
 
   preview: {

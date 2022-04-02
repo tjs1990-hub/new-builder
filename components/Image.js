@@ -15,7 +15,7 @@ const Image = (props) => {
 
   return (
     <>
-      <Img {...imageProps} layout='responsive' placeholder="blur" />
+      <Img {...imageProps} placeholder="blur" layout="fill" />
     </>
   );
 };

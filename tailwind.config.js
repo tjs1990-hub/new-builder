@@ -23,6 +23,7 @@ module.exports = {
       'h-4': '4rem',
       'h-5': '5rem',
       'h-40': '40px',
+      'h-55': '55px',
       'h-90': '90px',
       'h-200': '200px',
       'h-40v': '40vh',
@@ -47,5 +48,7 @@ module.exports = {
       'w-64': '16rem'
     }
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+  ]
 };

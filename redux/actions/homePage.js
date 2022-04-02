@@ -13,7 +13,10 @@ export const getHomePage = () => async (dispatch) => {
   slug,
   bodytop,
   mainImage,
-  body
+  body,
+  seotitle,
+  seodesc,
+  callout
   },
   
 }
